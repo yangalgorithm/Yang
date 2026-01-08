@@ -1,0 +1,198 @@
+{
+	"code": 0,
+	"data": [
+		{
+			"path": "/home",
+			"name": "home",
+			"component": "home",
+			"meta": {
+				"title": "message.router.home",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": true,
+				"isIframe": false,
+				"roles": ["yonghu"],
+				"icon": "iconfont icon-shouye"
+			}
+		},
+		{
+			"path": "/yonghuxinxigrzlgl",
+			"name": "yonghuxinxigrzlgl",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "个人资料管理",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yonghu"],
+				"icon": "el-icon-s-grid"
+			},
+			"children": [
+				{
+					"path": "/yonghuxinxi_updt2/1",
+					"name": "yonghuxinxi_updt2",
+					"component": "yonghuxinxi/personal/index",
+					"meta": {
+						"title": "修改个人资料",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yonghu"],
+						"icon": "iconfont icon-caidan"
+					}
+				}
+			]
+		},
+{
+			"path": "/yuyuejiazhengyonghugl",
+			"name": "yuyuejiazhengyonghugl",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "汽车预约订单管理",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yonghu"],
+				"icon": "el-icon-s-grid"
+			},
+			"children": [
+				{
+					"path": "/jiazhengfuwu_yuyuejiazheng/1",
+					"name": "jiazhengfuwu_yuyuejiazheng",
+					"component": "yuyuejiazheng/jiazhengfuwu_yuyuejiazheng",
+					"meta": {
+						"title": "汽车预约订单添加",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yonghu"],
+						"icon": "iconfont icon-caidan"
+					}
+				},
+{
+					"path": "/yuyuejiazheng/1",
+					"name": "yuyuejiazheng",
+					"component": "yuyuejiazheng/index",
+					"meta": {
+						"title": "汽车预约订单查询",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yonghu"],
+						"icon": "iconfont icon-caidan"
+					}
+				}
+			]
+		},
+{
+			"path": "/fuwupingjiayonghugl",
+			"name": "fuwupingjiayonghugl",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "服务评价管理",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yonghu"],
+				"icon": "el-icon-s-grid"
+			},
+			"children": [
+				{
+					"path": "/yuyuejiazheng_fuwupingjia/1",
+					"name": "yuyuejiazheng_fuwupingjia",
+					"component": "fuwupingjia/yuyuejiazheng_fuwupingjia",
+					"meta": {
+						"title": "服务评价添加",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yonghu"],
+						"icon": "iconfont icon-caidan"
+					}
+				},
+{
+					"path": "/fuwupingjia/1",
+					"name": "fuwupingjia",
+					"component": "fuwupingjia/index",
+					"meta": {
+						"title": "服务评价查询",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yonghu"],
+						"icon": "iconfont icon-caidan"
+					}
+				}
+			]
+		},
+
+
+
+
+		
+		{
+			"path": "/yuyuejiazhengAdd",
+			"name": "yuyuejiazhengAdd",
+			"component": "yuyuejiazheng/yuyuejiazheng_addlbdq",
+			"meta": {
+				"title": "汽车预约订单添加",
+				"isLink": "",
+				"isHide": true,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yonghu"],
+				"icon": "el-icon-school"
+			}
+		},
+		{
+			"path": "/fuwupingjiaAdd",
+			"name": "fuwupingjiaAdd",
+			"component": "fuwupingjia/fuwupingjia_addlbdq",
+			"meta": {
+				"title": "服务评价添加",
+				"isLink": "",
+				"isHide": true,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yonghu"],
+				"icon": "el-icon-school"
+			}
+		},
+		
+
+		{
+			"path": "/resetPass",
+			"name": "resetPass",
+			"component": "resetPass/index",
+			"meta": {
+				"title": "message.router.resetPass",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yonghu"],
+				"icon": "el-icon-s-grid"
+			}
+		}
+	]
+}

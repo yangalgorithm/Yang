@@ -1,0 +1,138 @@
+{
+	"code": 0,
+	"data": [
+		{
+			"path": "/home",
+			"name": "home",
+			"component": "home",
+			"meta": {
+				"title": "message.router.home",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": true,
+				"isIframe": false,
+				"roles": ["yuangong"],
+				"icon": "iconfont icon-shouye"
+			}
+		},
+		{
+			"path": "/yuangongxinxigrzlgl",
+			"name": "yuangongxinxigrzlgl",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "个人资料管理",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yuangong"],
+				"icon": "el-icon-s-grid"
+			},
+			"children": [
+				{
+					"path": "/yuangongxinxi_updt2/1",
+					"name": "yuangongxinxi_updt2",
+					"component": "yuangongxinxi/personal/index",
+					"meta": {
+						"title": "修改个人资料",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yuangong"],
+						"icon": "iconfont icon-caidan"
+					}
+				}
+			]
+		},
+{
+			"path": "/yuyuejiazhengyuangonggl",
+			"name": "yuyuejiazhengyuangonggl",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "汽车预约订单管理",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yuangong"],
+				"icon": "el-icon-s-grid"
+			},
+			"children": [
+				{
+					"path": "/yuyuejiazheng/1",
+					"name": "yuyuejiazheng",
+					"component": "yuyuejiazheng/index",
+					"meta": {
+						"title": "汽车预约订单查询",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yuangong"],
+						"icon": "iconfont icon-caidan"
+					}
+				}
+			]
+		},
+{
+			"path": "/jiazhengfuwuyuangonggl",
+			"name": "jiazhengfuwuyuangonggl",
+			"component": "layout/routerView/parent",
+			"meta": {
+				"title": "服务项目管理",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yuangong"],
+				"icon": "el-icon-s-grid"
+			},
+			"children": [
+				{
+					"path": "/jiazhengfuwu/1",
+					"name": "jiazhengfuwu",
+					"component": "jiazhengfuwu/index",
+					"meta": {
+						"title": "服务项目查询",
+						"isLink": "",
+						"isHide": false,
+						"isKeepAlive": true,
+						"isAffix": false,
+						"isIframe": false,
+						"roles": ["yuangong"],
+						"icon": "iconfont icon-caidan"
+					}
+				}
+			]
+		},
+
+
+
+
+		
+		
+
+		{
+			"path": "/resetPass",
+			"name": "resetPass",
+			"component": "resetPass/index",
+			"meta": {
+				"title": "message.router.resetPass",
+				"isLink": "",
+				"isHide": false,
+				"isKeepAlive": true,
+				"isAffix": false,
+				"isIframe": false,
+				"roles": ["yuangong"],
+				"icon": "el-icon-s-grid"
+			}
+		}
+	]
+}

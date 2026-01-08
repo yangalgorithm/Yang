@@ -1,0 +1,202 @@
+<template>
+	<div class="home">
+		<el-row :gutter="15" style="display: flex;justify-content: center;align-items: center">
+<!--			<el-col :md="24" :lg="12" :xl="12" class="home-lg">-->
+<!--				<el-card shadow="hover">-->
+<!--					<div slot="header">-->
+<!--						<span>报名统计（饼图按专业）</span>-->
+<!--					</div>-->
+<!--					<div class="charts">-->
+<!--						<div class="charts-left mr7">-->
+<!--							<div id="ref1" class="h100"></div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</el-card>-->
+<!--			</el-col>-->
+			<el-col :md="24" :lg="12" :xl="12" class="home-lg">
+				<el-card shadow="hover">
+					<div slot="header">
+						<span>满意度统计（柱形图）</span>
+					</div>
+					<div class="charts">
+						<div class="charts-left mr7">
+							<div id="ref2" class="h100"></div>
+						</div>
+					</div>
+				</el-card>
+			</el-col>
+		</el-row>
+	</div>
+</template>
+
+<script>
+	import * as echarts from "echarts";
+	import Pagination from "@/layout/pagination/Pagination";
+	import {Session} from "@/utils/storage";
+	import {fuwupingjia_tj_gonghao} from "@/api/fuwupingjia/fuwupingjiaApi";
+export default {
+	name: 'user',
+	data() {
+		return {
+			loading: false, //是显示加载
+			user:[],
+		};
+	},
+	computed:{
+		headers(){
+			return {"token":Session.get("token")}
+		}
+	},
+	watch: {
+			'$route' (to, from) {
+				// 路由发生变化页面刷新
+				this.$router.go(0);
+			}
+		},
+	components: {
+		Pagination
+	},
+	created() {
+		if (!Session.get('userInfo')) return false;
+		this.userInfo = Session.get('userInfo');
+		this.initChart();
+	},
+	methods: {
+		initChart() {
+			fuwupingjia_tj_gonghao().then(res=>{
+				let data = res.data
+        console.log(data,"data")
+				let value = []
+				data.forEach(item=>{
+					value.push({name:item.aa,value:item.bb})
+				})
+				let xData = []
+				let yData = []
+        let manyi = []
+        let bumanyi = []
+        let zhengchang = []
+				data.forEach(item=>{
+          // console.log(item,"item")
+					xData.push(item.gonghao)
+					manyi.push(item.满意_count)
+          bumanyi.push(item.不满意_count)
+          zhengchang.push(item.正常_count)
+				})
+
+
+
+				// let chart = echarts.init(document.getElementById("ref1"));
+				// const option = {
+				// 	title: {
+				// 		text: '类别统计',
+				// 		left: 'center'
+				// 	},
+				// 	tooltip: {
+				// 		trigger: 'item'
+				// 	},
+				// 	legend: {
+				// 		orient: 'vertical',
+				// 		left: 'left'
+				// 	},
+				// 	series: [
+				// 		{
+				// 			name: '类别',
+				// 			type: 'pie',
+				// 			radius: '50%',
+				// 			data: value,
+				// 			emphasis: {
+				// 				itemStyle: {
+				// 					shadowBlur: 10,
+				// 					shadowOffsetX: 0,
+				// 					shadowColor: 'rgba(0, 0, 0, 0.5)'
+				// 				}
+				// 			}
+				// 		}
+				// 	]
+				// };
+				// chart.setOption(option);
+				// window.addEventListener('resize', () => {
+				// 	chart.resize();
+				// });
+
+
+
+
+				let chart2 = echarts.init(document.getElementById("ref2"));
+				const option2 = {
+					title: {
+						text: '满意度统计',
+						left: 'center'
+					},
+					grid: {
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'shadow'
+						}
+					},
+					xAxis: {
+						type: 'category',
+						data: xData
+					},
+					yAxis: {
+						type: 'value'
+					},
+					// series: [
+					// 	{
+					// 		type: 'bar',
+					// 		data: yData,
+					// 	}
+					// ]
+          series: [
+    {
+      name: '满意',
+      type: 'bar',
+      barGap: 0,
+      // label: labelOption,
+      emphasis: {
+        focus: 'series'
+      },
+      // data: [manyi[0],bumanyi[0],zhengchang[0]]
+       data: [...manyi]
+    },
+
+    {
+      name: '不满意',
+      type: 'bar',
+      // label: labelOption,
+      emphasis: {
+        focus: 'series'
+      },
+       data: [...bumanyi]
+    },
+    {
+      name: '正常',
+      type: 'bar',
+      // label: labelOption,
+      emphasis: {
+        focus: 'series'
+      },
+        data: [...zhengchang]
+    }
+  ]
+				};
+				chart2.setOption(option2);
+				window.addEventListener('resize', () => {
+					chart2.resize();
+				});
+			})
+		},
+
+	},
+};
+</script>
+
+<style scoped lang="scss">
+	@import './index.scss';
+</style>
